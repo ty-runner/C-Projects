@@ -1,5 +1,4 @@
 # Login
-Login c project
 This project is a text based login window with the following options:
   - login
   - new_user
