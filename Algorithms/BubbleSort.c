@@ -22,12 +22,14 @@ int num_of_ints(char const *file){
     fclose(fp);
     return count;
 }
+
 void swap(int* xp, int* yp)
 {
     int temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
+
 void bubblesort(int* arr, int count){
     int i, j;
     bool swapped;
@@ -46,6 +48,7 @@ void bubblesort(int* arr, int count){
             break;
     }
 }
+
 int main(int argc, char const *argv[])
 {
     int num_count = num_of_ints(argv[1]);
