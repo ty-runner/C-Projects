@@ -3,6 +3,13 @@
 #include <string.h>
 #include <stdbool.h>
 #include <math.h>
+void write_to_file(int* arr){
+    FILE* fp = fopen("sorted.txt", "w");
+    for(int i = 0; i < sizeof(arr)+1;i++){
+        fwrite(arr, sizeof(int), i, fp);
+    }
+    fclose(fp);
+}
 int num_of_ints(char const *file){
     FILE* fp = fopen(file, "r");
     int digit;
@@ -85,6 +92,7 @@ int main(int argc, char const *argv[])
         printf("%d\n", arr[i]);
     }
     fclose(fp);
+    write_to_file(arr);
     free(arr);
     return 0;
 }
