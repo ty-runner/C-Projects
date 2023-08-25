@@ -6,7 +6,7 @@
 void write_to_file(int* arr){
     FILE* fp = fopen("sorted.txt", "w");
     for(int i = 0; i < sizeof(arr)+1;i++){
-        fwrite(arr, sizeof(int), i, fp);
+        fprintf(fp, "%d ", arr[i]);
     }
     fclose(fp);
 }
@@ -68,6 +68,7 @@ int main(int argc, char const *argv[])
     int digit_count=0;
     int sum=0;
     int index = 0;
+    //maybe in the future I make this a seperate function
     do
     {
         digit[digit_count++] = fgetc(fp);
@@ -84,13 +85,7 @@ int main(int argc, char const *argv[])
             sum = 0;
         }
     }while(1);
-    for(int i = 0; i < num_count;i++){
-        printf("%d\n", arr[i]);
-    }
     bubblesort(arr, num_count);
-    for(int i = 0; i < num_count;i++){
-        printf("%d\n", arr[i]);
-    }
     fclose(fp);
     write_to_file(arr);
     free(arr);
